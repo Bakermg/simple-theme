@@ -45,6 +45,7 @@ function simple_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'simple-theme' ),
+		'social' => esc_html__( 'Social Menu', 'simple-theme'),
 	) );
 
 	/*
@@ -59,14 +60,18 @@ function simple_theme_setup() {
 		'caption',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'simple_theme_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add theme support for custom logos
+	add_theme_support('custom-logo', array (
+			'width' => 90,
+			'height' => 90,
+			'flex-width' => true,
+		));
+
 }
 endif;
 add_action( 'after_setup_theme', 'simple_theme_setup' );
@@ -101,13 +106,33 @@ function simple_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'simple_theme_widgets_init' );
 
+// Pre connect for google fonts
+
+function simple_theme_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'simple-theme', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'simple_theme_resource_hints', 10, 2 );
+
 /**
  * Enqueue scripts and styles.
  */
 function simple_theme_scripts() {
+	//Enqueque Google fonts
+	wp_enqueue_style('simple-theme-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu:400,700');
+
+	//Enqueque Fontawesome
+	wp_enqueue_script('simple-theme-fontawesome', 'https://use.fontawesome.com/dd8acc7905.js');
+
 	wp_enqueue_style( 'simple-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'simple-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'simple-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'simple-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -116,6 +141,7 @@ function simple_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'simple_theme_scripts' );
+
 
 /**
  * Implement the Custom Header feature.

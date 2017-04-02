@@ -15,9 +15,12 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'simple-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'simple-theme' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'simple-theme' ), 'simple-theme', '<a href="https://automattic.com/" rel="designer">Mike Baker</a>' ); ?>
+		<span class="fa fa-facebook-square fa-3x"></span>
+		<span class="fa fa-twitter-square fa-3x"></span>
+		<span class="fa fa-instagram fa-3x"></span>
+		<span class="fa fa-youtube-square fa-3x"></span>
+		<p> &copy;Arepa Sports 2017</p>
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -74,6 +74,9 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	background: $color__button;
+	color: #fff;
+	margin: 5px;
 }
 
 @media screen and (min-width: 37.5em) {
