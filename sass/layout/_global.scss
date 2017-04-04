@@ -1,6 +1,25 @@
 .site-content {
 	padding: 1em;
+	background: #000;
 	@media (min-width: $query__small) {
 		padding: 2em;
+
+	}
+}
+.site-main {
+	background: $color__site;
+	text-align: center;
+	border-radius: 5px;
+}
+footer {
+	background: $color__site;
+	text-align: center;
+}
+
+.site-info {
+	color: $color__background-body;
+
+	span {
+		padding: .35em .2em .1em;
 	}
 }

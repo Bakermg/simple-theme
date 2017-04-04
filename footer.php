@@ -15,10 +15,11 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-		<span class="fa fa-facebook-square fa-3x"></span>
-		<span class="fa fa-twitter-square fa-3x"></span>
-		<span class="fa fa-instagram fa-3x"></span>
-		<span class="fa fa-youtube-square fa-3x"></span>
+		<span class="fa fa-instagram fa-3x"><a href="#"></a></span>
+		<span class="fa fa-facebook-square fa-3x"><a href="#"></a></span>
+		<span class="fa fa-twitter-square fa-3x"><a href="#"></a></span>
+		<span class="fa fa-youtube-square fa-3x"><a href="#"></a></span>
+
 		<p> &copy;Arepa Sports 2017</p>
 
 		</div><!-- .site-info -->

@@ -289,23 +289,29 @@ h1 {
 }
 
 h2 {
-	font-size: 2.6em;
-}
-
-h3 {
 	font-size: 2.4em;
 }
 
-h4 {
+@media (max-width: 600px) {
+	h2 {
+		font-size: 1.2em;
+	}
+}
+
+h3 {
 	font-size: 2.2em;
 }
 
-h5 {
+h4 {
 	font-size: 2em;
 }
 
-h6 {
+h5 {
 	font-size: 1.8em;
+}
+
+h6 {
+	font-size: 1.6em;
 }
 
 p {
@@ -371,7 +377,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: #fefefe;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -524,15 +530,18 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #fefefe;
+	text-decoration: none;
 }
 
 a:visited {
-	color: purple;
+	color: #fefefe;
+	text-decoration: none;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #ccc #ccc #bbb;
+	text-decoration: underline;
 }
 
 a:focus {
@@ -572,6 +581,7 @@ a:hover, a:active {
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
+	color: inherit;
 }
 
 .main-navigation ul ul li:hover > ul,
@@ -602,7 +612,7 @@ a:hover, a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-	background: #ea576f;
+	background: #e7415b;
 	color: #fff;
 	margin: 5px;
 }
@@ -732,12 +742,32 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .site-content {
 	padding: 1em;
+	background: #000;
 }
 
 @media (min-width: 600px) {
 	.site-content {
 		padding: 2em;
 	}
+}
+
+.site-main {
+	background: #e53350;
+	text-align: center;
+	border-radius: 5px;
+}
+
+footer {
+	background: #e53350;
+	text-align: center;
+}
+
+.site-info {
+	color: #fefefe;
+}
+
+.site-info span {
+	padding: .35em .2em .1em;
 }
 
 /*--------------------------------------------------------------
