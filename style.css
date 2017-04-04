@@ -288,13 +288,19 @@ h1 {
 	font-size: 3em;
 }
 
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.4em;
+	}
+}
+
 h2 {
 	font-size: 2.4em;
 }
 
 @media (max-width: 600px) {
 	h2 {
-		font-size: 1.2em;
+		font-size: 1.4em;
 	}
 }
 
@@ -557,16 +563,18 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	display: block;
-	float: left;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	width: 100%;
+	background: #000;
 }
 
 .main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	padding-left: 20px;
 }
 
 .main-navigation ul ul {
@@ -601,6 +609,12 @@ a:hover, a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	padding-right: 15px;
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+	color: #e42a48;
 }
 
 .main-navigation a {
@@ -623,6 +637,7 @@ a:hover, a:active {
 	}
 	.main-navigation ul {
 		display: block;
+		background: #000;
 	}
 }
 
@@ -742,7 +757,8 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .site-content {
 	padding: 1em;
-	background: #000;
+	background: -webkit-linear-gradient(#000, #E82a49, #000);
+	background: linear-gradient(#000, #E82a49, #000);
 }
 
 @media (min-width: 600px) {
@@ -780,16 +796,9 @@ footer {
 
 .site-header {
 	position: relative;
-	padding: 1em;
 	font-family: "Ubuntu", sans-serif;
 	color: #fff;
-	background-color: #e42a48;
-}
-
-@media (min-width: 600px) {
-	.site-header {
-		padding: 1em 2em;
-	}
+	background-color: #000;
 }
 
 .site-branding {
@@ -851,6 +860,10 @@ footer {
 	background: #000;
 }
 
+.entry-header {
+	color: #ffffff;
+}
+
 @media (min-width: 900px) {
 	.site-header {
 		display: -webkit-box;
@@ -901,6 +914,10 @@ footer {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.jetpack-video-wrapper iframe {
+	margin: auto !important;
 }
 
 /*--------------------------------------------------------------

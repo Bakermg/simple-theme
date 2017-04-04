@@ -7,13 +7,9 @@
 
 .site-header {
 	position: relative;
-	padding: 1em;
 	font-family: $font__code;
 	color: #fff;
-	background-color: $color__skin;
-	@media (min-width: $query__small) {
-		padding: 1em 2em;
-	}
+	background-color: #000;
 }
 
 .site-branding {
@@ -62,6 +58,9 @@
 }
 .empty-home {
 	background: #000;
+}
+.entry-header{
+	color: #ffffff;
 }
 
 @media (min-width: $query__medium) {

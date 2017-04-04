@@ -1,6 +1,6 @@
 .site-content {
 	padding: 1em;
-	background: #000;
+	background: $color__gradient;
 	@media (min-width: $query__small) {
 		padding: 2em;
 
